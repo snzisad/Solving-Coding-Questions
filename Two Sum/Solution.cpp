@@ -18,4 +18,5 @@ int main(){
     
     for (auto i = results.begin(); i != results.end(); ++i)
         cout << *i << endl;
+
 }

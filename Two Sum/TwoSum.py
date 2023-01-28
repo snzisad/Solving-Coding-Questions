@@ -1,12 +1,9 @@
 def twoSum(self, nums: List[int], target: int) -> List[int]:
     for i in range(0, len(nums)):
-        try:
-            n = target - nums[i]
-            p = nums.index(n)
-            if p is not i:
-                if p>i:
-                    return [i,p]
-                else:
-                    return [p,i]
-        except:
-            continue
+        remaining_numbers = {}
+
+        for i, n in enumerate(nums):
+            if n in remaining_numbers:
+                return [i, remaining_numbers[n]]
+                
+            remaining_numbers[target-n] = i
