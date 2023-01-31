@@ -2,20 +2,20 @@
 
 function plusOne($digits) {
     $new_digits = [];
-    $additional = 1;
+    $carry = 1;
     for($i=count($digits)-1; $i>=0; $i--){
-        $val_sum = $digits[$i]+$additional;
+        $val_sum = $digits[$i]+$carry;
         if($val_sum>9){
             array_unshift($new_digits, 0);
-            $additional = 1;
+            $carry = 1;
         }
         else{
             array_unshift($new_digits, $val_sum);
-            $additional = 0;
+            $carry = 0;
         }
     }
-    if($additional>0){
-        array_unshift($new_digits, $additional);
+    if($carry>0){
+        array_unshift($new_digits, $carry);
     }
 
     return $new_digits;  

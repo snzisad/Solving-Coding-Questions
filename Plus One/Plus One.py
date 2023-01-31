@@ -6,18 +6,18 @@ def plusOne(digits):
     :rtype: List[int]
     """
     new_digits = collections.deque()
-    additional = 1
+    carry = 1
     for i in range(len(digits)-1, -1, -1):
-        sum1 = digits[i]+additional
+        sum1 = digits[i]+carry
         if sum1>9:
             new_digits.appendleft(0)
-            additional = 1
+            carry = 1
         else:
             new_digits.appendleft(sum1)
-            additional = 0
+            carry = 0
 
-    if additional>0:
-        new_digits.appendleft(additional)
+    if carry>0:
+        new_digits.appendleft(carry)
 
     return new_digits
 
