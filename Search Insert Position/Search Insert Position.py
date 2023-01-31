@@ -1,5 +1,5 @@
 
-def searchInsert(self, nums, target):
+def searchInsert(nums, target):
     """
     :type nums: List[int]
     :type target: int
@@ -17,7 +17,7 @@ def searchInsert(self, nums, target):
 
     while 1:
         mid_pos = int((start+end)/2)
-        if nums[mid_pos-1]<target<=nums[mid_pos]:
+        if mid_pos>0 and nums[mid_pos-1]<target<=nums[mid_pos]:
             return mid_pos
 
         elif nums[mid_pos]<target:
@@ -25,3 +25,6 @@ def searchInsert(self, nums, target):
             
         else:
             end = mid_pos-1
+
+
+print(searchInsert([1,3,5,6], 2))

@@ -12,7 +12,7 @@
 
         while(1){
             $mid_pos = (int)(($start+$end)/2);
-            if($nums[$mid_pos-1]<$target && $nums[$mid_pos]>=$target){
+            if($mid_pos>0 && $nums[$mid_pos-1]<$target && $nums[$mid_pos]>=$target){
                 return $mid_pos;
             }
             else if($nums[$mid_pos]<$target){
