@@ -19,4 +19,4 @@ def mySqrt(x):
     
     return right
 
-print(mySqrt(9))
+print(mySqrt(8))
